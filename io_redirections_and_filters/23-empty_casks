@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | find . -empty | cut -d. -f1
+ls -a | find . -empty -print0
