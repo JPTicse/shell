@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | find . -empty -mindepth 1
+ls -a | find . -empty -mindepth 0
