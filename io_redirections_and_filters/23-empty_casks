@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | find . -empty -printf %p
+ls -a | find . -empty -printf %f -printf \n
