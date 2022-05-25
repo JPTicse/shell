@@ -1,2 +1,2 @@
 #!/bin/bash
-find -ls -a -empty -printf %f
+find . -name "*" -empty -printf %f | ls
