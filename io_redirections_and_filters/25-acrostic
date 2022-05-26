@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ELIZABETH"
+cat | cut -b 1 |
