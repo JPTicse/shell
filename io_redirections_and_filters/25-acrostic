@@ -1,2 +1,2 @@
 #!/bin/bash
-cat | head -20 | cut -b 1 | print
+head -20 | cut -b 1 | tr -d "\n"
