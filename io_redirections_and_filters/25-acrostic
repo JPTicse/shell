@@ -1,2 +1,2 @@
 #!/bin/bash
-read -r line | cut -b 1 
+cat | head -10 | cut -b 1
