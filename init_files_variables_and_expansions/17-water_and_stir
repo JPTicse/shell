@@ -1,0 +1,2 @@
+#!/bin/bash
+5#$($WATER | tr water 01234) + 5#$($STIR | tr stir. 01234)
