@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#A loop that repeat echo 10 times
+until [ "$counter" = 10 ]
+do
+	echo Best School
+	((counter++))
+done
