@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #A loop that repeat echo 10 times
-hour=1
+hour=0
 minute=1
-while [ "$hour" -le 12 ]
+while [ "$hour" -lt 12 ]
 do
 	echo "Hour: $hour"
 	((hour++))
