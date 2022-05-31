@@ -9,7 +9,7 @@ echo $$ >> /var/run/myscript.pid
 
 trap "echo 'Y U no love me?!' deletefileandexit" SIGINT
 trap "echo 'I hate the kill command'; deletefileandexit" SIGTERM
-trap "deletefileandexit" SIGQUIT
+trap "echo 'I hate the kill command'; deletefileandexit" SIGQUIT
 
 while : ; do
 	echo "To infinity and beyond"
