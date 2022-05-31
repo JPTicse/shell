@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #This script will display its own PID
-name=pgrep -f "4-to_infinity_and_beyond"
-kill $name
+name="pgrep -f "4-to_infinity_and_beyond""
+kill "$name"
