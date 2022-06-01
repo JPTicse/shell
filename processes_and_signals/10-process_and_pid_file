@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #Init funct and to the task
-deleteandkill(){ 
-sudo rm /var/run/myscript.pid; exit;}
+deleteandkill(){ sudo rm /var/run/myscript.pid; pkill -9 $$; }
 
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'echo "I hate the kill command"; deleteandkill' SIGTERM
