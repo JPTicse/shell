@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #This script will display its own PID
-PIDFILE=/var/run/my_process.pid
 if [ "${1}" == "start" ] ; then
 	./manage_my_process &
 	touch /var/run/my_process.pid
