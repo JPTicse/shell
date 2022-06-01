@@ -3,18 +3,19 @@
 PIDFILE=/var/run/my_process.pid
 if [ "${1}" == "start" ] ; then
 	./manage_my_process &
-	touch "$PIDFILE"
-	echo "$!" > "$PIDFILE"
+	touch /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
 	echo "manage_my_process started"
 elif [ "${1}" == "stop" ] ; then
 	echo "manage_my_process stopped"
-	kill "$($PIDFILE)"
-	rm "$PIDFILE"
+	kill "$(cat /var/run/my_process.pid)"
+	rm /var/run/my_process.pid
 elif [ "${1}" == "restart" ] ; then
-	kill "$($PIDFILE)"
-	rm "$PIDFILE"
-	./manage_my_process.pid
-	echo "$!" > "$PDIFILE"
+	kill "$(cat /var/run/my_process.pid)" 
+	rm /var/run/my_process.pid
+	./manage_my_process.pid &
+	touch /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
 	echo "manage_my_process restarted"
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
