@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #This script will display its own PID
-execpid(){ ./manage_my_process &; }
+execpid(){ ./manage_my_process & /; }
 killit(){ kill "$(cat /var/run/my_process.pid)"; }
 deletefile(){ sudo rm /var/run/my_process.pid; }
 createfile(){ echo "$!" > /var/run/my_process.pid; }
