@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 #Init funct and to the task
-deleteandkill(){ sudo rm /var/run/myscript.pid; pkill -9 $$; }
+deleteandkill(){ sudo rm /var/run/myscript.pid; exit; }
+
+echo $$ >> /var/run/myscript.pid
 
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'echo "I hate the kill command"; deleteandkill' SIGTERM
 trap 'deleteandkill' SIGQUIT
 
-echo $$ >> /var/run/myscript.pid
 while (true)
-do 
+do
 	echo "To infinity and beyond"
 	sleep 2
 done
