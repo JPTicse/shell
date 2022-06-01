@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-#This script will display its own PID
-touch /var/run_myscript.pid
+
+deleteandkill(){ 
+sudo rm /var/run/myscript.pid; exit;}
+
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'echo "I hate the kill command"; deleteandkill' SIGTERM
+trap 'deleteandkill' SIGQUIT
+
 echo $$ >> /var/run/myscript.pid
-while : ; do
+while (true)
+do 
 	echo "To infinity and beyond"
 	sleep 2
-	trap 'echo "I hate the kill command"; sudo rm /var/run/myscript.pid; exit' SIGTERM
-	trap 'echo "Y U no love me?!"' SIGINT
-	trap 'sudo rm /var/run/myscript.pid; exit' SIGQUIT
 done
